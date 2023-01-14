@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7957774F2972F01A00465210 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7957774E2972F01A00465210 /* FavouritesView.swift */; };
+		795777512972F04F00465210 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795777502972F04F00465210 /* ListView.swift */; };
+		795777532972F0CD00465210 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795777522972F0CD00465210 /* ModelData.swift */; };
 		79B8FAF92972E16500CACFAF /* family_recipes_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */; };
 		79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAFA2972E16500CACFAF /* ContentView.swift */; };
 		79B8FAFD2972E16600CACFAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B8FAFC2972E16600CACFAF /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7957774E2972F01A00465210 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		795777502972F04F00465210 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		795777522972F0CD00465210 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		79B8FAF52972E16500CACFAF /* family-recipes-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "family-recipes-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = family_recipes_iosApp.swift; sourceTree = "<group>"; };
 		79B8FAFA2972E16500CACFAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +38,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7957774C2972EF4900465210 /* Tab Views */ = {
+			isa = PBXGroup;
+			children = (
+				7957774E2972F01A00465210 /* FavouritesView.swift */,
+				795777502972F04F00465210 /* ListView.swift */,
+			);
+			path = "Tab Views";
+			sourceTree = "<group>";
+		};
+		7957774D2972EF5400465210 /* Model Data */ = {
+			isa = PBXGroup;
+			children = (
+				795777522972F0CD00465210 /* ModelData.swift */,
+			);
+			path = "Model Data";
+			sourceTree = "<group>";
+		};
 		79B8FAEC2972E16500CACFAF = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +74,8 @@
 		79B8FAF72972E16500CACFAF /* family-recipes-ios */ = {
 			isa = PBXGroup;
 			children = (
+				7957774D2972EF5400465210 /* Model Data */,
+				7957774C2972EF4900465210 /* Tab Views */,
 				79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */,
 				79B8FAFA2972E16500CACFAF /* ContentView.swift */,
 				79B8FAFC2972E16600CACFAF /* Assets.xcassets */,
@@ -137,7 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795777512972F04F00465210 /* ListView.swift in Sources */,
 				79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */,
+				795777532972F0CD00465210 /* ModelData.swift in Sources */,
+				7957774F2972F01A00465210 /* FavouritesView.swift in Sources */,
 				79B8FAF92972E16500CACFAF /* family_recipes_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +295,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"family-recipes-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XY38V6KLF8;
@@ -305,7 +333,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"family-recipes-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XY38V6KLF8;
