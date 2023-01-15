@@ -17,6 +17,10 @@ struct ContentView: View {
         case favourites
     }
     
+    init() {
+        
+    }
+    
     var body: some View {
         TabView(selection: $selection) {
             FavouritesView()
@@ -34,9 +38,10 @@ struct ContentView: View {
             if phase == .background {
                 modelData.saveData()
             }
-            if phase == .active {
-                modelData.loadData()
-            }
+        }
+        .onAppear{
+            modelData.loadData()
+            modelData.loadAllRecipes()
         }
     }
 }

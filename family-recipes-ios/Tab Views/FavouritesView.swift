@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct FavouritesView: View {
+    @EnvironmentObject var modelData: ModelData
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            List(modelData.favouriteRecipes){ recipe in
+                NavigationLink {
+                    RecipeDetails()
+                } label: {
+                    RecipeRow()
+                }
+            }
+            .navigationTitle("Favourites")
+                
+        }
     }
 }
 
 struct FavouritesView_Previews: PreviewProvider {
     static var previews: some View {
         FavouritesView()
+            .environmentObject(ModelData())
     }
 }

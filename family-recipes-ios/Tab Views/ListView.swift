@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct ListView: View {
+    @EnvironmentObject var modelData: ModelData
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack{
+            List(modelData.recipeList){ recipe in
+                NavigationLink {
+                    RecipeDetails()
+                } label: {
+                    RecipeRow()
+                }
+            }
+            .navigationTitle("Recipes")
+                
+        }
     }
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView()
+            .environmentObject(ModelData())
     }
 }

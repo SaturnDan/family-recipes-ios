@@ -18,9 +18,9 @@ struct TransformerRecipe: Codable, Equatable {
     var scannedCount: Int
 
     enum CodingKeys: String, CodingKey {
-        case count
-        case items
-        case scannedCount
+        case count = "Count"
+        case items = "Items"
+        case scannedCount = "S"
     }
 }
 
@@ -43,7 +43,7 @@ struct DataClass: Codable, Equatable {
     var m: DataM
 
     enum CodingKeys: String, CodingKey {
-        case m
+        case m = "M"
     }
 }
 
@@ -57,7 +57,7 @@ struct StringHolder: Codable, Equatable {
     var s: String
 
     enum CodingKeys: String, CodingKey {
-        case s
+        case s = "S"
     }
 }
 
@@ -66,7 +66,7 @@ struct Description: Codable, Equatable {
     var l: [StringHolder]
 
     enum CodingKeys: String, CodingKey {
-        case l
+        case l = "L"
     }
 }
 
@@ -75,7 +75,7 @@ struct Ingredients: Codable, Equatable {
     var l: [IngredientsL]
 
     enum CodingKeys: String, CodingKey {
-        case l
+        case l = "L"
     }
 }
 
@@ -84,7 +84,7 @@ struct IngredientsL: Codable, Equatable {
     var m: PurpleM
 
     enum CodingKeys: String, CodingKey {
-        case m
+        case m = "M"
     }
 }
 
@@ -99,7 +99,7 @@ struct SectionIngredients: Codable, Equatable {
     var l: [SectionIngredientsL]
 
     enum CodingKeys: String, CodingKey {
-        case l
+        case l = "L"
     }
 }
 
@@ -108,7 +108,7 @@ struct SectionIngredientsL: Codable, Equatable {
     var m: Ingredient
 
     enum CodingKeys: String, CodingKey {
-        case m
+        case m = "M"
     }
 }
 
@@ -122,7 +122,7 @@ struct Steps: Codable, Equatable {
     var l: [StepsDetailedL]
 
     enum CodingKeys: String, CodingKey {
-        case l
+        case l = "L"
     }
 }
 
@@ -131,7 +131,7 @@ struct StepsDetailedL: Codable, Equatable {
     var m: Section
 
     enum CodingKeys: String, CodingKey {
-        case m
+        case m = "M"
     }
 }
 

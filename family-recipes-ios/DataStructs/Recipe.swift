@@ -20,7 +20,7 @@ struct Recipe: Codable, Identifiable {
     let stepsDetailed: [Sections]
     let recipeData: RecipeData
     let title: String
-    let furtherInfo: String    
+    let furtherInfo: String
 }
 
 struct Tags: Codable {
