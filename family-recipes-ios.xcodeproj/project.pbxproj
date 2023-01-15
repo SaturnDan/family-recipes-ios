@@ -18,6 +18,7 @@
 		7984049029748B2C0065F493 /* RecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984048F29748B2C0065F493 /* RecipeDetails.swift */; };
 		7984049229748C220065F493 /* RecipeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984049129748C220065F493 /* RecipeRow.swift */; };
 		798404942974908F0065F493 /* RecipeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798404932974908F0065F493 /* RecipeNames.swift */; };
+		798404972974C62D0065F493 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 798404962974C62D0065F493 /* Nuke */; };
 		79B8FAF92972E16500CACFAF /* family_recipes_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */; };
 		79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAFA2972E16500CACFAF /* ContentView.swift */; };
 		79B8FAFD2972E16600CACFAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B8FAFC2972E16600CACFAF /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7957775D29740C5600465210 /* Alamofire in Frameworks */,
+				798404972974C62D0065F493 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +159,7 @@
 			name = "family-recipes-ios";
 			packageProductDependencies = (
 				7957775C29740C5600465210 /* Alamofire */,
+				798404962974C62D0065F493 /* Nuke */,
 			);
 			productName = "family-recipes-ios";
 			productReference = 79B8FAF52972E16500CACFAF /* family-recipes-ios.app */;
@@ -188,6 +191,7 @@
 			mainGroup = 79B8FAEC2972E16500CACFAF;
 			packageReferences = (
 				7957775B29740C5600465210 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				798404952974C62D0065F493 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 79B8FAF62972E16500CACFAF /* Products */;
 			projectDirPath = "";
@@ -455,6 +459,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		798404952974C62D0065F493 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -462,6 +474,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7957775B29740C5600465210 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		798404962974C62D0065F493 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 798404952974C62D0065F493 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

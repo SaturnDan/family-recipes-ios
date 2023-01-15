@@ -66,15 +66,18 @@ final class ModelData: ObservableObject {
             //If success, get recipe for each name
             case .success(let value):
                 let RecipeList = value.recipeNames
+                
                 RecipeList.forEach { name in
                     self.getRecipe(recipeName: name.recipeName.s, completionHandler: {result in
                         switch result{
-                        case .success(let value):
+                        case .success(let recipeValue):
+                            debugPrint("Successfully downloaded recipe for \(recipeValue.recipeName)")
                             //If get recipe success, append to the list of recipes in modelData
-                            if self.recipeList.contains(where: {$0.recipeName == value.recipeName}){
+                            if self.recipeList.contains(where: {$0.recipeName == recipeValue.recipeName}){
                                 debugPrint("Recipe already in list")
                             }else{
-                                self.recipeList.append(value)
+                                self.recipeList.append(recipeValue)
+                                
                             }
                            
                         case.failure(let error):
@@ -100,78 +103,99 @@ final class ModelData: ObservableObject {
         { response in
             switch response.result {
             case .success(let value):
+                debugPrint("Successfully downloaded recipe")
                 let tempRecipe = value.items[0]
                 
                 
                 //Convert multiple strings in description to one string
                 var descriptionString: String = ""
-                tempRecipe.description.l.forEach { desc in
-                    descriptionString = "\(descriptionString)\n\(desc.s)"
-                }
+                tempRecipe.description?.l?.forEach { desc in
+                        descriptionString = "\(descriptionString)\n\(desc.s)"
+                    }
+                
+                
                 
                 //Concatenate further info
                 var furtherInfo: String = ""
-                tempRecipe.furtherInfo.l.forEach {
+                
+                tempRecipe.furtherInfo?.l?.forEach {
                     info in
                     furtherInfo = "\(furtherInfo)\n\(info.s)"
                 }
                 
                 //Create RecipeData
-                let recipeData = RecipeData(cookTime: tempRecipe.data.m.cookTime.s, difficulty: tempRecipe.data.m.difficulty.s, prepTime: tempRecipe.data.m.prepTime.s)
+                var recipeData = RecipeData(cookTime: "N/A", difficulty: "N/A", prepTime: "N/A")
+                if tempRecipe.data != nil {
+                    recipeData = RecipeData(cookTime: tempRecipe.data!.m.cookTime.s, difficulty: tempRecipe.data!.m.difficulty.s, prepTime: tempRecipe.data!.m.prepTime.s)
+                }
+                
                 
                 //Create temp tags
                 var newTags = [Tags]()
-                tempRecipe.tags.l.forEach{
-                    tag in
-                    newTags.append(Tags(tagName: tag.s))
+                if tempRecipe.tags != nil {
+                    tempRecipe.tags!.l?.forEach{
+                        tag in
+                        newTags.append(Tags(tagName: tag.s))
+                    }
                 }
+                
                 
                 //Create temp ingredients
                 var tempIngredients = [IngredientSections]()
-                
-                tempRecipe.ingredients.l.forEach { ingredient in
-                    var ingList = [IngredientsinSection]()
-                    
-                    ingredient.m.sectionIngredients.l.forEach { tempIng in
-                        let ingAmount = tempIng.m.amount.s
-                        let ingUnit = tempIng.m.unit.s
-                        let ingName = tempIng.m.ingredient.s
+                if tempRecipe.ingredients != nil{
+                    tempRecipe.ingredients!.l.forEach { ingredient in
+                        var ingList = [IngredientsinSection]()
                         
-                        ingList.append(IngredientsinSection(amount: ingAmount, unit: ingUnit, ingredient: ingName))
-                        
+                        ingredient.m.sectionIngredients.l.forEach { tempIng in
+                            let ingAmount = tempIng.m.amount.s
+                            let ingUnit = tempIng.m.unit.s
+                            let ingName = tempIng.m.ingredient.s
+                            
+                            ingList.append(IngredientsinSection(amount: ingAmount, unit: ingUnit, ingredient: ingName))
+                            
+                        }
+                        tempIngredients.append(IngredientSections(sectionName: ingredient.m.sectionName.s, sectionIngredients: ingList))
                     }
-                    tempIngredients.append(IngredientSections(sectionName: ingredient.m.sectionName.s, sectionIngredients: ingList))
                 }
+                
                 
                 
                 //Create temp simple steps
                 var tempSimpleSteps = [Sections]()
                 
-                tempRecipe.stepsSimple.l.forEach { steps in
-                    var stepList = [Step]()
-                    
-                    steps.m.sectionSteps.l.forEach { stepDescription in
-                        stepList.append(Step(stepInstruction: stepDescription.s))
+                if tempRecipe.stepsSimple != nil {
+                    tempRecipe.stepsSimple!.l.forEach { steps in
+                        var stepList = [Step]()
+                        
+                        steps.m.sectionSteps.l?.forEach { stepDescription in
+                            stepList.append(Step(stepInstruction: stepDescription.s))
+                        }
+                        
+                        tempSimpleSteps.append(Sections(sectionName: steps.m.sectionName.s, sectionSteps: stepList))
                     }
-                    
-                    tempSimpleSteps.append(Sections(sectionName: steps.m.sectionName.s, sectionSteps: stepList))
                 }
+                
                 
                 //Create temp detailed steps
                 var tempDetailSteps = [Sections]()
-                tempRecipe.stepsDetailed.l.forEach { steps in
-                    var stepList = [Step]()
-                    
-                    steps.m.sectionSteps.l.forEach { stepDescription in
-                        stepList.append(Step(stepInstruction: stepDescription.s))
+                
+                if tempRecipe.stepsDetailed != nil {
+                    tempRecipe.stepsDetailed!.l.forEach { steps in
+                        var stepList = [Step]()
+                        
+                        steps.m.sectionSteps.l?.forEach { stepDescription in
+                            stepList.append(Step(stepInstruction: stepDescription.s))
+                        }
+                        
+                        tempDetailSteps.append(Sections(sectionName: steps.m.sectionName.s, sectionSteps: stepList))
                     }
-                    
-                    tempDetailSteps.append(Sections(sectionName: steps.m.sectionName.s, sectionSteps: stepList))
                 }
                 
-                //Create new recipe from data
-                let newRecipe = Recipe(recipeName: tempRecipe.recipeName.s, description: descriptionString, shortDescription: tempRecipe.shortDescription.s, ingredients: tempIngredients, imageURL: tempRecipe.image.s, tags: newTags, stepsSimple: tempSimpleSteps, stepsDetailed: tempDetailSteps, recipeData: recipeData, title: tempRecipe.title.s, furtherInfo: furtherInfo)
                 
+                //Create new recipe from data
+                let newRecipe = Recipe(recipeName: tempRecipe.recipeName.s, description: descriptionString, shortDescription: tempRecipe.shortDescription?.s ?? "", ingredients: tempIngredients, imageURL: tempRecipe.image?.s ?? "", tags: newTags, stepsSimple: tempSimpleSteps, stepsDetailed: tempDetailSteps, recipeData: recipeData, title: tempRecipe.title?.s ?? "", furtherInfo: furtherInfo)
+                
+                debugPrint("Successfully transformed recipe")
                 //Append new recipe to list
                 //self.recipeList.append(newRecipe)
                 

@@ -7,6 +7,10 @@
 
 import Foundation
 import SwiftUI
+import Nuke
+import Alamofire
+import Combine
+
 
 struct Recipe: Codable, Identifiable {
     var id = UUID()
@@ -21,6 +25,15 @@ struct Recipe: Codable, Identifiable {
     let recipeData: RecipeData
     let title: String
     let furtherInfo: String
+    var imageData: Data?
+    
+    func downloadImage() async throws {
+        if self.imageURL != "" {
+            let response = try await ImagePipeline.shared.image(for: URL(string: self.imageURL)!)
+            let image = response.container.data
+            self.imageData = image
+        }
+    }
 }
 
 struct Tags: Codable {

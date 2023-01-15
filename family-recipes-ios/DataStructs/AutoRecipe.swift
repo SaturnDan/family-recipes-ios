@@ -20,22 +20,22 @@ struct TransformerRecipe: Codable, Equatable {
     enum CodingKeys: String, CodingKey {
         case count = "Count"
         case items = "Items"
-        case scannedCount = "S"
+        case scannedCount = "ScannedCount"
     }
 }
 
 // MARK: - Item
 struct Item: Codable, Equatable {
     var recipeName: StringHolder
-    var stepsDetailed: Steps
-    var shortDescription, image: StringHolder
-    var data: DataClass
-    var stepsSimple: Steps
-    var description: Description
-    var ingredients: Ingredients
-    var tags: Description
-    var title: StringHolder
-    var furtherInfo: Description
+    var stepsDetailed: Steps?
+    var shortDescription, image: StringHolder?
+    var data: DataClass?
+    var stepsSimple: Steps?
+    var description: Description?
+    var ingredients: Ingredients?
+    var tags: Description?
+    var title: StringHolder?
+    var furtherInfo: Description?
 }
 
 // MARK: - DataClass
@@ -63,10 +63,12 @@ struct StringHolder: Codable, Equatable {
 
 // MARK: - Description
 struct Description: Codable, Equatable {
-    var l: [StringHolder]
+    var l: [StringHolder]?
+    var s: String?
 
     enum CodingKeys: String, CodingKey {
         case l = "L"
+        case s = "S"
     }
 }
 
