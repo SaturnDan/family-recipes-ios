@@ -1,0 +1,387 @@
+{
+    "Count": 1,
+    "Items": [
+        {
+            "recipeName": {
+                "S": "neapolitan-pizza-v2"
+            },
+            "stepsDetailed": {
+                "L": [
+                    {
+                        "M": {
+                            "sectionName": {
+                                "S": "dough"
+                            },
+                            "sectionSteps": {
+                                "L": [
+                                    {
+                                        "S": "Mix flour and salt in a bowl"
+                                    },
+                                    {
+                                        "S": "Disolve sugar into the water, then whilst mixing vigorously, add oil and then once combined the yeast afterwards"
+                                    },
+                                    {
+                                        "S": "Cover the mixture with a warm tea towel for 10 minutes and wait for the yeast to activate"
+                                    },
+                                    {
+                                        "S": "Make a well in the flour"
+                                    },
+                                    {
+                                        "S": "Slowly stream in the wet mixture to the well and gradually incorporate the flour around the well. Try to keep the mixture in the well fairly wet during this process until its all been added."
+                                    },
+                                    {
+                                        "S": "Mix until well combined, then either use a mixer of some sort or your hands (even a hand beater with spiral attachment will do) to work the dough until it is springy"
+                                    },
+                                    {
+                                        "S": "Work dough into a ball, then cover with a damp cloth and leave in a warm place to prove"
+                                    },
+                                    {
+                                        "S": "Proving requires planning. The goal is to develop two things: gluten, and flavour. Gluten makes your dough not tear and the crust act like crust and not bread. Flavour.....well, flavour. Warm proof happens in the mixing bowl you used to make the dough."
+                                    },
+                                    {
+                                        "S": "Minimum: 4 hrs, warm proof. Not much flavour, mediocre gluten, be careful with this dough it will *want* to tear"
+                                    },
+                                    {
+                                        "S": "Reasonable: 2 hrs warm proof, followed by 6 hrs room temperature proof"
+                                    },
+                                    {
+                                        "S": "Ideal: 4 hrs warm proof, 24-48 hrs cold proof in refrigerator"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "sectionName": {
+                                "S": "cooking"
+                            },
+                            "sectionSteps": {
+                                "L": [
+                                    {
+                                        "S": "Split the dough into four balls if you havent yet, and let them rest under plastic wrap for at least half an hour before use"
+                                    },
+                                    {
+                                        "S": "Place a pizza stone (or if you don't have one, an upturned oven tray) and preheat oven to as hot as it will go - the hotter the better."
+                                    },
+                                    {
+                                        "S": "Flatten the dough ball by generously flouring, then gently rolling the dough out to the thickness youd like your crust (e.g. 5cm), then gently pull the edges out and foll over your knuckles to thin out the centre"
+                                    },
+                                    {
+                                        "S": "Make sure the base is well floured (both the bottom and sides), then dust the pizza peel in first flour then semolina and transfer the dough to it"
+                                    },
+                                    {
+                                        "S": "Youre now under a timer. The longer you leave the dough on the peel, the more time you give it to moistent he flour and stick to the peel."
+                                    },
+                                    {
+                                        "S": "Add your sauce (e.g. tomato), then your cheese (e.g. low moisture mozarella), then toppings (e.g. salami - go easy here)"
+                                    },
+                                    {
+                                        "S": "Cook until the crust looks done - ignore everything else - and pull it out on the peel when ready. Slive and enjoy."
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "shortDescription": {
+                "S": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, ligula et accumsan sagittis, elit justo consequat justo, eu laoreet tortor sem nec sem."
+            },
+            "image": {
+                "S": "https://murmursofricotta.com/wp-content/uploads/2022/04/Neapolitan-Pizza_-4.webp"
+            },
+            "data": {
+                "M": {
+                    "cookTime": {
+                        "S": "5 minutes"
+                    },
+                    "difficulty": {
+                        "S": "easy"
+                    },
+                    "prepTime": {
+                        "S": "1 hour"
+                    }
+                }
+            },
+            "stepsSimple": {
+                "L": [
+                    {
+                        "M": {
+                            "sectionName": {
+                                "S": "dough"
+                            },
+                            "sectionSteps": {
+                                "L": [
+                                    {
+                                        "S": "Mix flour and salt in a bowl"
+                                    },
+                                    {
+                                        "S": "Mix water, sugar, oil and yeast together, let sit for 10 minutes"
+                                    },
+                                    {
+                                        "S": "Make a well in the flour, then whilst stirring slowly stream the wet mixture in"
+                                    },
+                                    {
+                                        "S": "Mix until combined (adding flour as necessary), then knead until springy to the touch"
+                                    },
+                                    {
+                                        "S": "Rest at room temperature for 4hrs minimum, ideally overnight"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "sectionName": {
+                                "S": "cooking"
+                            },
+                            "sectionSteps": {
+                                "L": [
+                                    {
+                                        "S": "When ready to cook, preheat oven to its maximum temperature (at least 300C)"
+                                    },
+                                    {
+                                        "S": "Split dough into four portions, roll into balls and let rest for 30 minutes"
+                                    },
+                                    {
+                                        "S": "Dust dough with flour, roll dough out until 4cm thick, then use your fingers to push the edges out to thin the centre"
+                                    },
+                                    {
+                                        "S": "Dust pizza peal with both flour and semolina, then transfer dough to it"
+                                    },
+                                    {
+                                        "S": "Add toppings, then cook in the oven until the crust has some color"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "description": {
+                "L": [
+                    {
+                        "S": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, ligula et accumsan sagittis, elit justo consequat justo, eu laoreet tortor sem nec sem. Morbi blandit condimentum ligula non pulvinar. Sed turpis lectus, vestibulum sit amet massa ac, varius eleifend ante. Vivamus venenatis nibh in odio dapibus, ac consectetur nibh vulputate."
+                    },
+                    {
+                        "S": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, ligula et accumsan sagittis, elit justo consequat justo, eu laoreet tortor sem nec sem."
+                    },
+                    {
+                        "S": "Morbi blandit condimentum ligula non pulvinar. Sed turpis lectus, vestibulum sit amet massa ac, varius eleifend ante. Vivamus venenatis nibh in odio dapibus, ac consectetur nibh vulputate."
+                    }
+                ]
+            },
+            "ingredients": {
+                "L": [
+                    {
+                        "M": {
+                            "sectionName": {
+                                "S": "dough"
+                            },
+                            "sectionIngredients": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "500"
+                                            },
+                                            "unit": {
+                                                "S": "grams"
+                                            },
+                                            "ingredient": {
+                                                "S": "bakers flour"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "pinch"
+                                            },
+                                            "ingredient": {
+                                                "S": "salt"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "375"
+                                            },
+                                            "unit": {
+                                                "S": "millilitres"
+                                            },
+                                            "ingredient": {
+                                                "S": "warm water"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "tablespoon"
+                                            },
+                                            "ingredient": {
+                                                "S": "olive oil"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "teaspoon"
+                                            },
+                                            "ingredient": {
+                                                "S": "sugar"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "7"
+                                            },
+                                            "unit": {
+                                                "S": "grams"
+                                            },
+                                            "ingredient": {
+                                                "S": "yeast"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "sectionName": {
+                                "S": "toppings"
+                            },
+                            "sectionIngredients": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "can"
+                                            },
+                                            "ingredient": {
+                                                "S": "san marzano tomatoes"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "pinch"
+                                            },
+                                            "ingredient": {
+                                                "S": "oregano"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "pinch"
+                                            },
+                                            "ingredient": {
+                                                "S": "salt"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "teaspoon"
+                                            },
+                                            "ingredient": {
+                                                "S": "concetrated tomato paste"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "200"
+                                            },
+                                            "unit": {
+                                                "S": "grams"
+                                            },
+                                            "ingredient": {
+                                                "S": "low-moisture mozarella"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "8"
+                                            },
+                                            "unit": {
+                                                "S": "slices"
+                                            },
+                                            "ingredient": {
+                                                "S": "salami"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "tags": {
+                "L": [
+                    {
+                        "S": "pizza"
+                    },
+                    {
+                        "S": "italian"
+                    },
+                    {
+                        "S": "favourites"
+                    }
+                ]
+            },
+            "title": {
+                "S": "Neapolitan Pizza v2"
+            },
+            "furtherInfo": {
+                "L": [
+                    {
+                        "S": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, ligula et accumsan sagittis, elit justo consequat justo, eu laoreet tortor sem nec sem. Morbi blandit condimentum ligula non pulvinar. Sed turpis lectus, vestibulum sit amet massa ac, varius eleifend ante."
+                    },
+                    {
+                        "S": "Vivamus venenatis nibh in odio dapibus, ac consectetur nibh vulputate."
+                    }
+                ]
+            }
+        }
+    ],
+    "ScannedCount": 1
+}

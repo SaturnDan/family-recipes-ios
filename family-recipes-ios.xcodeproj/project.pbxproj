@@ -10,6 +10,10 @@
 		7957774F2972F01A00465210 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7957774E2972F01A00465210 /* FavouritesView.swift */; };
 		795777512972F04F00465210 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795777502972F04F00465210 /* ListView.swift */; };
 		795777532972F0CD00465210 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795777522972F0CD00465210 /* ModelData.swift */; };
+		7957775529736A5800465210 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7957775429736A5800465210 /* Recipe.swift */; };
+		7957775729737BC900465210 /* AutoRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7957775629737BC900465210 /* AutoRecipe.swift */; };
+		795777592974074400465210 /* pizza_recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 795777582974074400465210 /* pizza_recipe.json */; };
+		7957775D29740C5600465210 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7957775C29740C5600465210 /* Alamofire */; };
 		79B8FAF92972E16500CACFAF /* family_recipes_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */; };
 		79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAFA2972E16500CACFAF /* ContentView.swift */; };
 		79B8FAFD2972E16600CACFAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B8FAFC2972E16600CACFAF /* Assets.xcassets */; };
@@ -20,6 +24,9 @@
 		7957774E2972F01A00465210 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		795777502972F04F00465210 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		795777522972F0CD00465210 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		7957775429736A5800465210 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		7957775629737BC900465210 /* AutoRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRecipe.swift; sourceTree = "<group>"; };
+		795777582974074400465210 /* pizza_recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pizza_recipe.json; sourceTree = "<group>"; };
 		79B8FAF52972E16500CACFAF /* family-recipes-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "family-recipes-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = family_recipes_iosApp.swift; sourceTree = "<group>"; };
 		79B8FAFA2972E16500CACFAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7957775D29740C5600465210 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +59,18 @@
 			isa = PBXGroup;
 			children = (
 				795777522972F0CD00465210 /* ModelData.swift */,
+				795777582974074400465210 /* pizza_recipe.json */,
 			);
 			path = "Model Data";
+			sourceTree = "<group>";
+		};
+		7957775A29740B7E00465210 /* DataStructs */ = {
+			isa = PBXGroup;
+			children = (
+				7957775429736A5800465210 /* Recipe.swift */,
+				7957775629737BC900465210 /* AutoRecipe.swift */,
+			);
+			path = DataStructs;
 			sourceTree = "<group>";
 		};
 		79B8FAEC2972E16500CACFAF = {
@@ -74,6 +92,7 @@
 		79B8FAF72972E16500CACFAF /* family-recipes-ios */ = {
 			isa = PBXGroup;
 			children = (
+				7957775A29740B7E00465210 /* DataStructs */,
 				7957774D2972EF5400465210 /* Model Data */,
 				7957774C2972EF4900465210 /* Tab Views */,
 				79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */,
@@ -108,6 +127,9 @@
 			dependencies = (
 			);
 			name = "family-recipes-ios";
+			packageProductDependencies = (
+				7957775C29740C5600465210 /* Alamofire */,
+			);
 			productName = "family-recipes-ios";
 			productReference = 79B8FAF52972E16500CACFAF /* family-recipes-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 79B8FAEC2972E16500CACFAF;
+			packageReferences = (
+				7957775B29740C5600465210 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 79B8FAF62972E16500CACFAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795777592974074400465210 /* pizza_recipe.json in Resources */,
 				79B8FB002972E16600CACFAF /* Preview Assets.xcassets in Resources */,
 				79B8FAFD2972E16600CACFAF /* Assets.xcassets in Resources */,
 			);
@@ -165,7 +191,9 @@
 				795777512972F04F00465210 /* ListView.swift in Sources */,
 				79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */,
 				795777532972F0CD00465210 /* ModelData.swift in Sources */,
+				7957775529736A5800465210 /* Recipe.swift in Sources */,
 				7957774F2972F01A00465210 /* FavouritesView.swift in Sources */,
+				7957775729737BC900465210 /* AutoRecipe.swift in Sources */,
 				79B8FAF92972E16500CACFAF /* family_recipes_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +413,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7957775B29740C5600465210 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7957775C29740C5600465210 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7957775B29740C5600465210 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 79B8FAED2972E16500CACFAF /* Project object */;
 }
