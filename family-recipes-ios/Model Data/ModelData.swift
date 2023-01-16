@@ -14,6 +14,7 @@ import Alamofire
 final class ModelData: ObservableObject {
     @Published var recipeList = [Recipe]()
     @Published var favouriteRecipes = [Recipe]()
+    @Published var localRecipe: [Recipe] = loadLocalData("pizza_json_recipe.json")
     let saveKey = "allRecipe"
     let favSaveKey = "favouriteRecipe"
     
@@ -24,7 +25,7 @@ final class ModelData: ObservableObject {
         if let encoded = try? JSONEncoder().encode(recipeList) {
             UserDefaults.standard.set(encoded, forKey: saveKey)
         }
-    }
+    }    
     
     func loadData(){
         if let data = UserDefaults.standard.data(forKey: favSaveKey) {
@@ -77,6 +78,13 @@ final class ModelData: ObservableObject {
                                 debugPrint("Recipe already in list")
                             }else{
                                 self.recipeList.append(recipeValue)
+                                do {
+                                    let jsonData = try JSONEncoder().encode(self.recipeList)
+                                    let jsonString = String(data: jsonData, encoding: .utf8)!
+                                    print("New JSON \n\(jsonString)")
+                                } catch{
+                                    print(error)
+                                }
                                 
                             }
                            
@@ -89,10 +97,8 @@ final class ModelData: ObservableObject {
             case .failure(let error):
                 debugPrint(error)
                //completionHandler(.failure(error))
-                
             }
         }
-        
     }
     
     func getRecipe(recipeName: String, completionHandler: @escaping (Result<Recipe, AFError>) -> Void) {
@@ -158,8 +164,6 @@ final class ModelData: ObservableObject {
                     }
                 }
                 
-                
-                
                 //Create temp simple steps
                 var tempSimpleSteps = [Sections]()
                 
@@ -209,4 +213,29 @@ final class ModelData: ObservableObject {
         }
         
     }
+}
+
+func loadLocalData<T: Decodable>(_ filename: String) -> T {
+    
+    let data: Data
+
+    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+            
+    else {
+        fatalError("Couldn't find \(filename) in main bundle.")
+    }
+
+    do {
+        data = try Data(contentsOf: file)
+    } catch {
+        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+    }
+
+    do {
+        let decoder = JSONDecoder()
+        return try decoder.decode(T.self, from: data)
+    } catch {
+        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+    }
+
 }

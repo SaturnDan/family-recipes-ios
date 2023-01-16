@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct RecipeRow: View {
-    @EnvironmentObject var modelData: ModelData
-    @State var emotes: Emotes
+    var recipe: Recipe
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(recipe.recipeName)")
     }
 }
 
 struct RecipeRow_Previews: PreviewProvider {
+    static var localRecipe = ModelData().localRecipe
     static var previews: some View {
-        RecipeRow()
+        RecipeRow(recipe: localRecipe[0])
     }
 }

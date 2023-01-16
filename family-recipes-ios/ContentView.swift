@@ -42,6 +42,8 @@ struct ContentView: View {
         .onAppear{
             modelData.loadData()
             modelData.loadAllRecipes()
+            
+            
         }
     }
 }

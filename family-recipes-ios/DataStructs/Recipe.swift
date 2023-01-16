@@ -27,13 +27,31 @@ struct Recipe: Codable, Identifiable {
     let furtherInfo: String
     var imageData: Data?
     
-    func downloadImage() async throws {
+    mutating func downloadImage() async throws {
         if self.imageURL != "" {
             let response = try await ImagePipeline.shared.image(for: URL(string: self.imageURL)!)
             let image = response.container.data
             self.imageData = image
         }
     }
+    /*
+    init (newRecipeName: String, newDescription: String = "", newShortDescription: String = "", newIngredients: [IngredientSections] = [IngredientSections]()){
+        recipeName = newRecipeName
+        description = newDescription
+        shortDescription = newShortDescription
+        ingredients =
+        imageURL =
+        tags =
+        stepsSimple =
+        stepsDetailed =
+        recipeData =
+        title =
+        furtherInfo =
+    }
+    */
+    //static var `default` = Recipe(recipename: "Test Recipe")
+    
+
 }
 
 struct Tags: Codable {

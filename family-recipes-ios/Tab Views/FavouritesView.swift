@@ -16,7 +16,7 @@ struct FavouritesView: View {
                 NavigationLink {
                     RecipeDetails()
                 } label: {
-                    RecipeRow()
+                    RecipeRow(recipe: modelData.localRecipe[0])
                 }
             }
             .navigationTitle("Favourites")

@@ -16,7 +16,7 @@ struct ListView: View {
                 NavigationLink {
                     RecipeDetails()
                 } label: {
-                    RecipeRow()
+                    RecipeRow(recipe: modelData.localRecipe[0])
                 }
             }
             .navigationTitle("Recipes")

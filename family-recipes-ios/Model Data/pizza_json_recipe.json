@@ -1,0 +1,207 @@
+[
+    {
+        "id": "9CB17469-709E-446B-A771-71A538700206",
+        "description": "\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, ligula et accumsan sagittis, elit justo consequat justo, eu laoreet tortor sem nec sem. Morbi blandit condimentum ligula non pulvinar. Sed turpis lectus, vestibulum sit amet massa ac, varius eleifend ante. Vivamus venenatis nibh in odio dapibus, ac consectetur nibh vulputate.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, ligula et accumsan sagittis, elit justo consequat justo, eu laoreet tortor sem nec sem.\nMorbi blandit condimentum ligula non pulvinar. Sed turpis lectus, vestibulum sit amet massa ac, varius eleifend ante. Vivamus venenatis nibh in odio dapibus, ac consectetur nibh vulputate.",
+        "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, ligula et accumsan sagittis, elit justo consequat justo, eu laoreet tortor sem nec sem.",
+        "stepsDetailed": [
+            {
+                "sectionName": "dough",
+                "sectionSteps": [
+                    {
+                        "stepInstruction": "Mix flour and salt in a bowl"
+                    },
+                    {
+                        "stepInstruction": "Disolve sugar into the water, then whilst mixing vigorously, add oil and then once combined the yeast afterwards"
+                    },
+                    {
+                        "stepInstruction": "Cover the mixture with a warm tea towel for 10 minutes and wait for the yeast to activate"
+                    },
+                    {
+                        "stepInstruction": "Make a well in the flour"
+                    },
+                    {
+                        "stepInstruction": "Slowly stream in the wet mixture to the well and gradually incorporate the flour around the well. Try to keep the mixture in the well fairly wet during this process until its all been added."
+                    },
+                    {
+                        "stepInstruction": "Mix until well combined, then either use a mixer of some sort or your hands (even a hand beater with spiral attachment will do) to work the dough until it is springy"
+                    },
+                    {
+                        "stepInstruction": "Work dough into a ball, then cover with a damp cloth and leave in a warm place to prove"
+                    },
+                    {
+                        "stepInstruction": "Proving requires planning. The goal is to develop two things: gluten, and flavour. Gluten makes your dough not tear and the crust act like crust and not bread. Flavour.....well, flavour. Warm proof happens in the mixing bowl you used to make the dough."
+                    },
+                    {
+                        "stepInstruction": "Minimum: 4 hrs, warm proof. Not much flavour, mediocre gluten, be careful with this dough it will *want* to tear"
+                    },
+                    {
+                        "stepInstruction": "Reasonable: 2 hrs warm proof, followed by 6 hrs room temperature proof"
+                    },
+                    {
+                        "stepInstruction": "Ideal: 4 hrs warm proof, 24-48 hrs cold proof in refrigerator"
+                    }
+                ]
+            },
+            {
+                "sectionName": "cooking",
+                "sectionSteps": [
+                    {
+                        "stepInstruction": "Split the dough into four balls if you havent yet, and let them rest under plastic wrap for at least half an hour before use"
+                    },
+                    {
+                        "stepInstruction": "Place a pizza stone (or if you don't have one, an upturned oven tray) and preheat oven to as hot as it will go - the hotter the better."
+                    },
+                    {
+                        "stepInstruction": "Flatten the dough ball by generously flouring, then gently rolling the dough out to the thickness youd like your crust (e.g. 5cm), then gently pull the edges out and foll over your knuckles to thin out the centre"
+                    },
+                    {
+                        "stepInstruction": "Make sure the base is well floured (both the bottom and sides), then dust the pizza peel in first flour then semolina and transfer the dough to it"
+                    },
+                    {
+                        "stepInstruction": "Youre now under a timer. The longer you leave the dough on the peel, the more time you give it to moistent he flour and stick to the peel."
+                    },
+                    {
+                        "stepInstruction": "Add your sauce (e.g. tomato), then your cheese (e.g. low moisture mozarella), then toppings (e.g. salami - go easy here)"
+                    },
+                    {
+                        "stepInstruction": "Cook until the crust looks done - ignore everything else - and pull it out on the peel when ready. Slive and enjoy."
+                    }
+                ]
+            }
+        ],
+        "tags": [
+            {
+                "tagName": "pizza"
+            },
+            {
+                "tagName": "italian"
+            },
+            {
+                "tagName": "favourites"
+            }
+        ],
+        "stepsSimple": [
+            {
+                "sectionName": "dough",
+                "sectionSteps": [
+                    {
+                        "stepInstruction": "Mix flour and salt in a bowl"
+                    },
+                    {
+                        "stepInstruction": "Mix water, sugar, oil and yeast together, let sit for 10 minutes"
+                    },
+                    {
+                        "stepInstruction": "Make a well in the flour, then whilst stirring slowly stream the wet mixture in"
+                    },
+                    {
+                        "stepInstruction": "Mix until combined (adding flour as necessary), then knead until springy to the touch"
+                    },
+                    {
+                        "stepInstruction": "Rest at room temperature for 4hrs minimum, ideally overnight"
+                    }
+                ]
+            },
+            {
+                "sectionName": "cooking",
+                "sectionSteps": [
+                    {
+                        "stepInstruction": "When ready to cook, preheat oven to its maximum temperature (at least 300C)"
+                    },
+                    {
+                        "stepInstruction": "Split dough into four portions, roll into balls and let rest for 30 minutes"
+                    },
+                    {
+                        "stepInstruction": "Dust dough with flour, roll dough out until 4cm thick, then use your fingers to push the edges out to thin the centre"
+                    },
+                    {
+                        "stepInstruction": "Dust pizza peal with both flour and semolina, then transfer dough to it"
+                    },
+                    {
+                        "stepInstruction": "Add toppings, then cook in the oven until the crust has some color"
+                    }
+                ]
+            }
+        ],
+        "furtherInfo": "\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, ligula et accumsan sagittis, elit justo consequat justo, eu laoreet tortor sem nec sem. Morbi blandit condimentum ligula non pulvinar. Sed turpis lectus, vestibulum sit amet massa ac, varius eleifend ante.\nVivamus venenatis nibh in odio dapibus, ac consectetur nibh vulputate.",
+        "title": "Neapolitan Pizza v2",
+        "ingredients": [
+            {
+                "sectionName": "dough",
+                "sectionIngredients": [
+                    {
+                        "amount": "500",
+                        "ingredient": "bakers flour",
+                        "unit": "grams"
+                    },
+                    {
+                        "amount": "1",
+                        "ingredient": "salt",
+                        "unit": "pinch"
+                    },
+                    {
+                        "amount": "375",
+                        "ingredient": "warm water",
+                        "unit": "millilitres"
+                    },
+                    {
+                        "amount": "1",
+                        "ingredient": "olive oil",
+                        "unit": "tablespoon"
+                    },
+                    {
+                        "amount": "1",
+                        "ingredient": "sugar",
+                        "unit": "teaspoon"
+                    },
+                    {
+                        "amount": "7",
+                        "ingredient": "yeast",
+                        "unit": "grams"
+                    }
+                ]
+            },
+            {
+                "sectionName": "toppings",
+                "sectionIngredients": [
+                    {
+                        "amount": "1",
+                        "ingredient": "san marzano tomatoes",
+                        "unit": "can"
+                    },
+                    {
+                        "amount": "1",
+                        "ingredient": "oregano",
+                        "unit": "pinch"
+                    },
+                    {
+                        "amount": "1",
+                        "ingredient": "salt",
+                        "unit": "pinch"
+                    },
+                    {
+                        "amount": "1",
+                        "ingredient": "concetrated tomato paste",
+                        "unit": "teaspoon"
+                    },
+                    {
+                        "amount": "200",
+                        "ingredient": "low-moisture mozarella",
+                        "unit": "grams"
+                    },
+                    {
+                        "amount": "8",
+                        "ingredient": "salami",
+                        "unit": "slices"
+                    }
+                ]
+            }
+        ],
+        "imageURL": "https://murmursofricotta.com/wp-content/uploads/2022/04/Neapolitan-Pizza_-4.webp",
+        "recipeData": {
+            "cookTime": "5 minutes",
+            "difficulty": "easy",
+            "prepTime": "1 hour"
+        },
+        "recipeName": "neapolitan-pizza-v2"
+    }
+]
