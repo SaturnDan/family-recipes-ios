@@ -17,10 +17,6 @@ struct ContentView: View {
         case favourites
     }
     
-    init() {
-        
-    }
-    
     var body: some View {
         TabView(selection: $selection) {
             FavouritesView()
@@ -41,8 +37,6 @@ struct ContentView: View {
         }
         .onAppear{
             modelData.loadData()
-            modelData.loadAllRecipes()
-            
             
         }
     }

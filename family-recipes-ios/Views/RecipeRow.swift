@@ -10,8 +10,14 @@ import SwiftUI
 struct RecipeRow: View {
     var recipe: Recipe
     
+    
     var body: some View {
-        Text("\(recipe.recipeName)")
+        HStack{
+            Text("\(recipe.title)")
+            
+        }
+        
+        
     }
 }
 

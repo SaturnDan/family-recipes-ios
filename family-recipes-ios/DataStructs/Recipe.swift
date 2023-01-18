@@ -10,9 +10,10 @@ import SwiftUI
 import Nuke
 import Alamofire
 import Combine
+import UIColorHexSwift
 
 
-struct Recipe: Codable, Identifiable {
+struct Recipe: Codable, Identifiable, Hashable {
     var id = UUID()
     let recipeName: String
     let description: String
@@ -26,59 +27,41 @@ struct Recipe: Codable, Identifiable {
     let title: String
     let furtherInfo: String
     var imageData: Data?
-    
-    mutating func downloadImage() async throws {
-        if self.imageURL != "" {
-            let response = try await ImagePipeline.shared.image(for: URL(string: self.imageURL)!)
-            let image = response.container.data
-            self.imageData = image
+}
+
+struct Tags: Codable, Hashable {
+    let tagName: String
+    var tagColour: Color {
+        switch tagName {
+        case "favourites": return Color(UIColor("#f7dc6f"))
+        case "italian": return Color(UIColor("#58d68d"))
+        case "pizza": return Color(UIColor("#ff7b7b"))
+        default: return Color(UIColor.systemGray5)
         }
     }
-    /*
-    init (newRecipeName: String, newDescription: String = "", newShortDescription: String = "", newIngredients: [IngredientSections] = [IngredientSections]()){
-        recipeName = newRecipeName
-        description = newDescription
-        shortDescription = newShortDescription
-        ingredients =
-        imageURL =
-        tags =
-        stepsSimple =
-        stepsDetailed =
-        recipeData =
-        title =
-        furtherInfo =
-    }
-    */
-    //static var `default` = Recipe(recipename: "Test Recipe")
-    
-
 }
 
-struct Tags: Codable {
-    let tagName: String
-}
-
-struct IngredientSections: Codable {
+struct IngredientSections: Codable, Hashable {
     let sectionName: String
     let sectionIngredients: [IngredientsinSection]
 }
 
-struct IngredientsinSection: Codable {
+struct IngredientsinSection: Codable, Hashable {
     let amount: String
     let unit: String
     let ingredient: String
 }
 
-struct Sections: Codable {
+struct Sections: Codable, Hashable {
     let sectionName: String
     let sectionSteps: [Step]
 }
 
-struct Step: Codable {
+struct Step: Codable, Hashable {
     let stepInstruction: String
 }
 
-struct RecipeData: Codable {
+struct RecipeData: Codable, Hashable {
     let cookTime: String
     let difficulty: String
     let prepTime: String

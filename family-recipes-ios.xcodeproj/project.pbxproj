@@ -19,8 +19,16 @@
 		7984049229748C220065F493 /* RecipeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984049129748C220065F493 /* RecipeRow.swift */; };
 		798404942974908F0065F493 /* RecipeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798404932974908F0065F493 /* RecipeNames.swift */; };
 		798404972974C62D0065F493 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 798404962974C62D0065F493 /* Nuke */; };
-		798404992974DC6A0065F493 /* DetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798404982974DC6A0065F493 /* DetailsHeader.swift */; };
 		7984049B2974E12C0065F493 /* pizza_json_recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 7984049A2974E12C0065F493 /* pizza_json_recipe.json */; };
+		7984049E297509370065F493 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7984049D297509370065F493 /* NukeUI */; };
+		798404A02975198B0065F493 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984049F2975198B0065F493 /* TitleView.swift */; };
+		798404A229751B590065F493 /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 798404A129751B590065F493 /* PoiretOne-Regular.ttf */; };
+		798404A829751D220065F493 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 798404A729751D220065F493 /* Comfortaa.ttf */; };
+		798404AC2975F0E00065F493 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798404AB2975F0E00065F493 /* Tag.swift */; };
+		798404AF2976ACCD0065F493 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 798404AE2976ACCD0065F493 /* UIColorHexSwift */; };
+		798404B12976ADC80065F493 /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798404B02976ADC80065F493 /* SwiftUIExtensions.swift */; };
+		798404B52977E2E90065F493 /* RecipeDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798404B42977E2E90065F493 /* RecipeDataView.swift */; };
+		798404B72977E3C80065F493 /* DifficultyScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798404B62977E3C80065F493 /* DifficultyScale.swift */; };
 		79B8FAF92972E16500CACFAF /* family_recipes_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */; };
 		79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAFA2972E16500CACFAF /* ContentView.swift */; };
 		79B8FAFD2972E16600CACFAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B8FAFC2972E16600CACFAF /* Assets.xcassets */; };
@@ -38,8 +46,15 @@
 		7984048F29748B2C0065F493 /* RecipeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails.swift; sourceTree = "<group>"; };
 		7984049129748C220065F493 /* RecipeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRow.swift; sourceTree = "<group>"; };
 		798404932974908F0065F493 /* RecipeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNames.swift; sourceTree = "<group>"; };
-		798404982974DC6A0065F493 /* DetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeader.swift; sourceTree = "<group>"; };
 		7984049A2974E12C0065F493 /* pizza_json_recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pizza_json_recipe.json; sourceTree = "<group>"; };
+		7984049F2975198B0065F493 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		798404A129751B590065F493 /* PoiretOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoiretOne-Regular.ttf"; sourceTree = "<group>"; };
+		798404A429751B900065F493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		798404A729751D220065F493 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
+		798404AB2975F0E00065F493 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		798404B02976ADC80065F493 /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
+		798404B42977E2E90065F493 /* RecipeDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataView.swift; sourceTree = "<group>"; };
+		798404B62977E3C80065F493 /* DifficultyScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyScale.swift; sourceTree = "<group>"; };
 		79B8FAF52972E16500CACFAF /* family-recipes-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "family-recipes-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = family_recipes_iosApp.swift; sourceTree = "<group>"; };
 		79B8FAFA2972E16500CACFAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,7 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7984049E297509370065F493 /* NukeUI in Frameworks */,
 				7957775D29740C5600465210 /* Alamofire in Frameworks */,
+				798404AF2976ACCD0065F493 /* UIColorHexSwift in Frameworks */,
 				798404972974C62D0065F493 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				7957775429736A5800465210 /* Recipe.swift */,
+				798404B02976ADC80065F493 /* SwiftUIExtensions.swift */,
 				7957775629737BC900465210 /* AutoRecipe.swift */,
 				798404932974908F0065F493 /* RecipeNames.swift */,
 			);
@@ -93,7 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				7984048C2974893D0065F493 /* FavouriteButton.swift */,
-				798404982974DC6A0065F493 /* DetailsHeader.swift */,
+				7984049F2975198B0065F493 /* TitleView.swift */,
+				798404B42977E2E90065F493 /* RecipeDataView.swift */,
+				798404B62977E3C80065F493 /* DifficultyScale.swift */,
+				798404AB2975F0E00065F493 /* Tag.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -107,11 +128,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		7984049C297509370065F493 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		798404A329751B6C0065F493 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				798404A129751B590065F493 /* PoiretOne-Regular.ttf */,
+				798404A729751D220065F493 /* Comfortaa.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		79B8FAEC2972E16500CACFAF = {
 			isa = PBXGroup;
 			children = (
 				79B8FAF72972E16500CACFAF /* family-recipes-ios */,
 				79B8FAF62972E16500CACFAF /* Products */,
+				7984049C297509370065F493 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,11 +164,13 @@
 		79B8FAF72972E16500CACFAF /* family-recipes-ios */ = {
 			isa = PBXGroup;
 			children = (
+				798404A429751B900065F493 /* Info.plist */,
+				7957774C2972EF4900465210 /* Tab Views */,
 				7984048E29748B200065F493 /* Views */,
 				7984048B297489270065F493 /* HelperViews */,
 				7957775A29740B7E00465210 /* DataStructs */,
 				7957774D2972EF5400465210 /* Model Data */,
-				7957774C2972EF4900465210 /* Tab Views */,
+				798404A329751B6C0065F493 /* Fonts */,
 				79B8FAF82972E16500CACFAF /* family_recipes_iosApp.swift */,
 				79B8FAFA2972E16500CACFAF /* ContentView.swift */,
 				79B8FAFC2972E16600CACFAF /* Assets.xcassets */,
@@ -166,6 +206,8 @@
 			packageProductDependencies = (
 				7957775C29740C5600465210 /* Alamofire */,
 				798404962974C62D0065F493 /* Nuke */,
+				7984049D297509370065F493 /* NukeUI */,
+				798404AE2976ACCD0065F493 /* UIColorHexSwift */,
 			);
 			productName = "family-recipes-ios";
 			productReference = 79B8FAF52972E16500CACFAF /* family-recipes-ios.app */;
@@ -198,6 +240,7 @@
 			packageReferences = (
 				7957775B29740C5600465210 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				798404952974C62D0065F493 /* XCRemoteSwiftPackageReference "Nuke" */,
+				798404AD2976ACCD0065F493 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
 			);
 			productRefGroup = 79B8FAF62972E16500CACFAF /* Products */;
 			projectDirPath = "";
@@ -214,8 +257,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7984049B2974E12C0065F493 /* pizza_json_recipe.json in Resources */,
+				798404A829751D220065F493 /* Comfortaa.ttf in Resources */,
 				795777592974074400465210 /* pizza_recipe.json in Resources */,
 				79B8FB002972E16600CACFAF /* Preview Assets.xcassets in Resources */,
+				798404A229751B590065F493 /* PoiretOne-Regular.ttf in Resources */,
 				79B8FAFD2972E16600CACFAF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,16 +273,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				795777512972F04F00465210 /* ListView.swift in Sources */,
+				798404B12976ADC80065F493 /* SwiftUIExtensions.swift in Sources */,
 				7984048D2974893D0065F493 /* FavouriteButton.swift in Sources */,
 				79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */,
+				798404B52977E2E90065F493 /* RecipeDataView.swift in Sources */,
 				795777532972F0CD00465210 /* ModelData.swift in Sources */,
 				7984049229748C220065F493 /* RecipeRow.swift in Sources */,
 				7957775529736A5800465210 /* Recipe.swift in Sources */,
 				7957774F2972F01A00465210 /* FavouritesView.swift in Sources */,
 				7984049029748B2C0065F493 /* RecipeDetails.swift in Sources */,
 				7957775729737BC900465210 /* AutoRecipe.swift in Sources */,
-				798404992974DC6A0065F493 /* DetailsHeader.swift in Sources */,
+				798404B72977E3C80065F493 /* DifficultyScale.swift in Sources */,
 				798404942974908F0065F493 /* RecipeNames.swift in Sources */,
+				798404AC2975F0E00065F493 /* Tag.swift in Sources */,
+				798404A02975198B0065F493 /* TitleView.swift in Sources */,
 				79B8FAF92972E16500CACFAF /* family_recipes_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +422,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XY38V6KLF8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "family-recipes-ios/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -411,6 +461,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XY38V6KLF8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "family-recipes-ios/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -475,6 +526,14 @@
 				minimumVersion = 11.0.0;
 			};
 		};
+		798404AD2976ACCD0065F493 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeahdongcn/UIColor-Hex-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.9;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -487,6 +546,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 798404952974C62D0065F493 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
+		};
+		7984049D297509370065F493 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 798404952974C62D0065F493 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+		798404AE2976ACCD0065F493 /* UIColorHexSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 798404AD2976ACCD0065F493 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColorHexSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

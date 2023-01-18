@@ -9,18 +9,35 @@ import SwiftUI
 
 struct ListView: View {
     @EnvironmentObject var modelData: ModelData
+    @State private var isLoading = true
+
+    
     var body: some View {
         
         NavigationStack{
             List(modelData.recipeList){ recipe in
                 NavigationLink {
-                    RecipeDetails()
+                    RecipeDetails(recipe: recipe)
                 } label: {
-                    RecipeRow(recipe: modelData.localRecipe[0])
+                    RecipeRow(recipe: recipe)
                 }
+                .redacted(reason: isLoading ? .placeholder : .init())
             }
             .navigationTitle("Recipes")
-                
+        }
+       
+        .onAppear{
+            modelData.loadAllRecipes(completionHandler: { result in
+                switch result {
+                case .success(_):
+                    debugPrint("Recipes successfully retrieved")
+                    print(modelData.recipeList)
+                    isLoading = false
+                case .failure(let r):
+                    print(r.localizedDescription)
+                    isLoading = false
+                }
+            })
         }
     }
 }
