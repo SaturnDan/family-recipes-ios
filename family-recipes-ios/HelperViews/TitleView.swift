@@ -22,19 +22,14 @@ struct TitleView: View {
             VStack (alignment: .leading){
                 Text("Description")
                     .font(.headline)
-
                     .foregroundColor(Color(UIColor("#2e4053")))
                     .padding(.bottom, 1)
                 
                 Text(recipe.shortDescription)
-                    
+                
             }
             .padding(20)
-           
-            
-            
         }
-        
     }
     
 }

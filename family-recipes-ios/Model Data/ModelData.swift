@@ -146,7 +146,6 @@ final class ModelData: ObservableObject {
                     recipeData = RecipeData(cookTime: tempRecipe.data!.m.cookTime.s, difficulty: tempRecipe.data!.m.difficulty.s, prepTime: tempRecipe.data!.m.prepTime.s)
                 }
                 
-                
                 //Create temp tags
                 var newTags = [Tags]()
                 if tempRecipe.tags != nil {
@@ -155,7 +154,6 @@ final class ModelData: ObservableObject {
                         newTags.append(Tags(tagName: tag.s))
                     }
                 }
-                
                 
                 //Create temp ingredients
                 var tempIngredients = [IngredientSections]()

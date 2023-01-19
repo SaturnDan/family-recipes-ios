@@ -20,7 +20,6 @@ struct FavouritesView: View {
                 }
             }
             .navigationTitle("Favourites")
-                
         }
     }
 }

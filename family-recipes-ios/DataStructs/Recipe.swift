@@ -27,6 +27,7 @@ struct Recipe: Codable, Identifiable, Hashable {
     let title: String
     let furtherInfo: String
     var imageData: Data?
+    var isFavourite: Bool? = false
 }
 
 struct Tags: Codable, Hashable {

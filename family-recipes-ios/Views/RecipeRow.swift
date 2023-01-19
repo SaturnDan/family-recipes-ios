@@ -14,10 +14,7 @@ struct RecipeRow: View {
     var body: some View {
         HStack{
             Text("\(recipe.title)")
-            
         }
-        
-        
     }
 }
 

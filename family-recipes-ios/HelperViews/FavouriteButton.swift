@@ -12,13 +12,8 @@ struct FavouriteButton: View {
     
     var body: some View {
         HStack{
-            Button {
-                isSet.toggle()
-            } label: {
-                Image(systemName: "star")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-            }
+            Toggle("Save emote as favourite?", isOn: $isSet)
+                .font(.headline)
         }
     }
 }

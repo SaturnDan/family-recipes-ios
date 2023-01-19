@@ -14,11 +14,23 @@ struct DifficultyScale: View {
         HStack{
             switch difficulty {
             case "easy":
-                Image(uiImage: UIImage(systemName: "thermometer.low")!)
+                HStack (alignment: .center){
+                    Image(uiImage: UIImage(systemName: "thermometer.low")!)
+                    Text("EASY")
+                        .font(Font.custom("Comfortaa", size: 15))
+                }
             case "medium":
-                Image(uiImage: UIImage(systemName: "thermometer.medium")!)
+                HStack(alignment: .center){
+                    Image(uiImage: UIImage(systemName: "thermometer.low")!)
+                    Text("MEDIUM")
+                        .font(Font.custom("Comfortaa", size: 15))
+                }
             case "hard":
-                Image(uiImage: UIImage(systemName: "thermometer.high")!)
+                HStack(alignment: .center){
+                    Image(uiImage: UIImage(systemName: "thermometer.low")!)
+                    Text("HARD")
+                        .font(Font.custom("Comfortaa", size: 15))
+                }
             default:
                 Image(uiImage: UIImage(systemName: "exclamationmark.triangle")!)
                 
