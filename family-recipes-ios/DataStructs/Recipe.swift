@@ -28,6 +28,23 @@ struct Recipe: Codable, Identifiable, Hashable {
     let furtherInfo: String
     var imageData: Data?
     var isFavourite: Bool? = false
+    
+    
+    init(description: String, shortDescription: String, stepsDetailed: [Sections], tags: [Tags], stepsSimple: [Sections], furtherInfo: String, title: String, ingredients: [IngredientSections], imageURL: String, recipeData: RecipeData, recipeName: String, isFavourite: Bool = false) {
+            self.id = UUID()
+            self.description = description
+            self.shortDescription = shortDescription
+            self.stepsDetailed = stepsDetailed
+            self.tags = tags
+            self.stepsSimple = stepsSimple
+            self.furtherInfo = furtherInfo
+            self.title = title
+            self.ingredients = ingredients
+            self.imageURL = imageURL
+            self.recipeData = recipeData
+            self.recipeName = recipeName
+            self.isFavourite = isFavourite
+        }
 }
 
 struct Tags: Codable, Hashable {

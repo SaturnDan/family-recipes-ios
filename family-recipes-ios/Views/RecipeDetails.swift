@@ -10,7 +10,7 @@ import NukeUI
 
 struct RecipeDetails: View {
     @EnvironmentObject var modelData: ModelData
-    var recipe: Recipe
+    @State var recipe: Recipe
     @State private var pickerSelection = 0
     
     var body: some View {
@@ -78,7 +78,19 @@ struct RecipeDetails: View {
                 }
                 Spacer(minLength: 10)
                 
-                
+                /*
+                VStack(alignment: .leading){
+                    FavouriteButton(isSet: $recipe.isFavourite)
+                        .onChange(of: recipe.isFavourite) { newValue in
+                            if newValue == true{
+                                modelData.appendFav(newRecipe: recipe)
+                            }else{
+                                modelData.removeFav(recipeName: recipe.recipeName)
+                            }
+                        }
+                        .padding(10)
+                }
+                */
                 Text(recipe.furtherInfo)
                     .padding([.leading, .trailing], 30)
                     .padding(.bottom, 20)

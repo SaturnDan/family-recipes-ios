@@ -93,7 +93,18 @@ final class ModelData: ObservableObject {
                                     //debugPrint("Successfully downloaded recipe for \(recipeValue.recipeName)")
                                     //If get recipe success, append to the list of recipes in modelData
                                     self.recipeList.append(recipeValue)
-                                    //debugPrint(self.recipeList)
+                                    do {
+                                        let jsonEncoder = JSONEncoder()
+                                        jsonEncoder.outputFormatting = .prettyPrinted
+                                        let json = try jsonEncoder.encode(self.recipeList)
+                                        let jsonString = String(data: json, encoding: .utf8)
+                                        
+                                        // iOS/Mac: Save to the App's documents directory
+                                        print(jsonString!)
+                                        
+                                    } catch {
+                                        print(error.localizedDescription)
+                                    }
                                 case.failure(let error):
                                     print(error.localizedDescription)
                                     completionHandler(.failure(error))
@@ -206,7 +217,8 @@ final class ModelData: ObservableObject {
                 
                 
                 //Create new recipe from data
-                let newRecipe = Recipe(recipeName: tempRecipe.recipeName.s, description: descriptionString, shortDescription: tempRecipe.shortDescription?.s ?? "", ingredients: tempIngredients, imageURL: tempRecipe.image?.s ?? "", tags: newTags, stepsSimple: tempSimpleSteps, stepsDetailed: tempDetailSteps, recipeData: recipeData, title: tempRecipe.title?.s ?? "", furtherInfo: furtherInfo)
+                //let newRecipe = Recipe(recipeName: tempRecipe.recipeName.s, description: descriptionString, shortDescription: tempRecipe.shortDescription?.s ?? "", ingredients: tempIngredients, imageURL: tempRecipe.image?.s ?? "", tags: newTags, stepsSimple: tempSimpleSteps, stepsDetailed: tempDetailSteps, recipeData: recipeData, title: tempRecipe.title?.s ?? "", furtherInfo: furtherInfo)
+                let newRecipe = Recipe(description: descriptionString, shortDescription: tempRecipe.shortDescription?.s ?? "", stepsDetailed: tempDetailSteps, tags: newTags, stepsSimple: tempSimpleSteps, furtherInfo: furtherInfo, title: tempRecipe.title?.s ?? "", ingredients: tempIngredients, imageURL: tempRecipe.image?.s ?? "", recipeData: recipeData, recipeName: tempRecipe.recipeName.s)
                 
                 //debugPrint("Successfully transformed recipe")
                 //Append new recipe to list

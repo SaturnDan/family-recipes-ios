@@ -31,7 +31,7 @@ struct ListView: View {
                 switch result {
                 case .success(_):
                     debugPrint("Recipes successfully retrieved")
-                    print(modelData.recipeList)
+
                     isLoading = false
                 case .failure(let r):
                     print(r.localizedDescription)
