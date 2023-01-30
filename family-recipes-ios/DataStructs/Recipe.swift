@@ -27,7 +27,11 @@ struct Recipe: Codable, Identifiable, Hashable {
     let title: String
     let furtherInfo: String
     var imageData: Data?
-    var isFavourite: Bool? = false
+    var isFavourite: Bool = false
+    
+    enum CodingKeys: String, CodingKey {
+        case id, recipeName, description, shortDescription, ingredients, imageURL, tags, stepsSimple, stepsDetailed, recipeData, title, furtherInfo, imageData
+    }
     
     
     init(description: String, shortDescription: String, stepsDetailed: [Sections], tags: [Tags], stepsSimple: [Sections], furtherInfo: String, title: String, ingredients: [IngredientSections], imageURL: String, recipeData: RecipeData, recipeName: String, isFavourite: Bool = false) {

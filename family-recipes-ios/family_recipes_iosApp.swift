@@ -14,6 +14,7 @@ struct family_recipes_iosApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(ModelData())
+            
         }
     }
 }

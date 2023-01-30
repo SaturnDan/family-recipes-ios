@@ -78,7 +78,7 @@ struct RecipeDetails: View {
                 }
                 Spacer(minLength: 10)
                 
-                /*
+                Divider()
                 VStack(alignment: .leading){
                     FavouriteButton(isSet: $recipe.isFavourite)
                         .onChange(of: recipe.isFavourite) { newValue in
@@ -88,9 +88,11 @@ struct RecipeDetails: View {
                                 modelData.removeFav(recipeName: recipe.recipeName)
                             }
                         }
-                        .padding(10)
+                       
                 }
-                */
+                .padding([.top, .bottom], 20)
+                .padding([.leading, .trailing], 40)
+                
                 Text(recipe.furtherInfo)
                     .padding([.leading, .trailing], 30)
                     .padding(.bottom, 20)

@@ -16,6 +16,8 @@ final class ModelData: ObservableObject {
     @Published var recipeList = [Recipe]()
     @Published var favouriteRecipes = [Recipe]()
     @Published var localRecipe: [Recipe] = loadLocalData("pizza_json_recipe.json")
+    @Published var featuredRecipe: Recipe? = nil
+    var recipeTags: [String: [Recipe]] = [:]
     let saveKey = "allRecipe"
     let favSaveKey = "favouriteRecipe"
     @Published var dataLoaded = false
@@ -68,6 +70,15 @@ final class ModelData: ObservableObject {
         UserDefaults.standard.synchronize()
     }
     
+    func setFeatured(recipe: Recipe? = nil){
+        if recipe == nil {
+            let element = self.recipeList.randomElement()
+            self.featuredRecipe = element
+        }else{
+            self.featuredRecipe = recipe
+        }
+    }
+    
     func loadAllRecipes(completionHandler: @escaping (Result<[Recipe], AFError>) -> Void) {
         if dataLoaded == false{
             let url = URL(string: "https://0hgyyrn329.execute-api.ap-southeast-2.amazonaws.com/v1/recipes/list")
@@ -76,12 +87,18 @@ final class ModelData: ObservableObject {
             AF.request(url!, method: .get).validate().responseDecodable(of: RecipeNameList.self){ response in
                 switch response.result{
                     
-                //If success, get recipe for each name
+                    //If success, get recipe for each name
                 case .success(let value):
-                   // debugPrint("Recipe names retrieved")
+                    // debugPrint("Recipe names retrieved")
                     let RecipeList = value.recipeNames
-                   // print(self.recipeList)
+                    // print(self.recipeList)
+                    
+                    let fetchGroup = DispatchGroup()
+                    var tempRecipes = [Recipe]()
+                    
                     RecipeList.forEach { name in
+                        
+                        fetchGroup.enter()
                         if self.recipeList.contains(where: {$0.recipeName == name.recipeName.s}){
                             debugPrint("Recipe loaded from cache")
                             
@@ -92,28 +109,52 @@ final class ModelData: ObservableObject {
                                 case .success(let recipeValue):
                                     //debugPrint("Successfully downloaded recipe for \(recipeValue.recipeName)")
                                     //If get recipe success, append to the list of recipes in modelData
-                                    self.recipeList.append(recipeValue)
-                                    do {
-                                        let jsonEncoder = JSONEncoder()
-                                        jsonEncoder.outputFormatting = .prettyPrinted
-                                        let json = try jsonEncoder.encode(self.recipeList)
-                                        let jsonString = String(data: json, encoding: .utf8)
-                                        
-                                        // iOS/Mac: Save to the App's documents directory
-                                        print(jsonString!)
-                                        
-                                    } catch {
-                                        print(error.localizedDescription)
-                                    }
-                                case.failure(let error):
+                                    tempRecipes.append(recipeValue)
+                                    
+                                    
+                                case .failure(let error):
                                     print(error.localizedDescription)
                                     completionHandler(.failure(error))
                                 }
+                                
+                                fetchGroup.leave()
                             })
                         }
                     }
-                    self.dataLoaded = true
-                    completionHandler(.success(self.recipeList))
+                    
+                    fetchGroup.notify(queue: .main) {
+                        self.dataLoaded = true
+                        
+                        //If want to see recipeList as json uncomment below
+                        /*do {
+                         let jsonEncoder = JSONEncoder()
+                         jsonEncoder.outputFormatting = .prettyPrinted
+                         let json = try jsonEncoder.encode(self.recipeList)
+                         let jsonString = String(data: json, encoding: .utf8)
+                         
+                         print(jsonString!)
+                         
+                         } catch {
+                         print(error.localizedDescription)
+                         }
+                         */
+                        
+                        self.recipeList = self.recipeList + tempRecipes
+                        //Sort recipes alphabetically
+                        self.recipeList.sort{ $0.title < $1.title}
+                        
+                        //Set the featured recipe
+                        self.setFeatured()
+                        
+                        //Get recipes by tags into dictionary
+                        self.recipeList.forEach { recipe in
+                            recipe.tags.forEach { tag in
+                                self.recipeTags[tag.tagName, default: []].append(recipe)
+                            }}
+                        completionHandler(.success(self.recipeList))
+                    }
+                    
+                    
                     
                 case .failure(let error):
                     debugPrint(error)
@@ -134,7 +175,7 @@ final class ModelData: ObservableObject {
         { response in
             switch response.result {
             case .success(let value):
-               // debugPrint("Successfully downloaded recipe")
+                // debugPrint("Successfully downloaded recipe")
                 let tempRecipe = value.items[0]
                 
                 //Convert multiple strings in description to one string
@@ -217,12 +258,7 @@ final class ModelData: ObservableObject {
                 
                 
                 //Create new recipe from data
-                //let newRecipe = Recipe(recipeName: tempRecipe.recipeName.s, description: descriptionString, shortDescription: tempRecipe.shortDescription?.s ?? "", ingredients: tempIngredients, imageURL: tempRecipe.image?.s ?? "", tags: newTags, stepsSimple: tempSimpleSteps, stepsDetailed: tempDetailSteps, recipeData: recipeData, title: tempRecipe.title?.s ?? "", furtherInfo: furtherInfo)
                 let newRecipe = Recipe(description: descriptionString, shortDescription: tempRecipe.shortDescription?.s ?? "", stepsDetailed: tempDetailSteps, tags: newTags, stepsSimple: tempSimpleSteps, furtherInfo: furtherInfo, title: tempRecipe.title?.s ?? "", ingredients: tempIngredients, imageURL: tempRecipe.image?.s ?? "", recipeData: recipeData, recipeName: tempRecipe.recipeName.s)
-                
-                //debugPrint("Successfully transformed recipe")
-                //Append new recipe to list
-                //self.recipeList.append(newRecipe)
                 
                 //Send back new recipe
                 completionHandler(.success(newRecipe))

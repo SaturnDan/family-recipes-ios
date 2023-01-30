@@ -10,32 +10,68 @@ import SwiftUI
 struct ListView: View {
     @EnvironmentObject var modelData: ModelData
     @State private var isLoading = true
-
+    
     
     var body: some View {
         
         NavigationStack{
-            List(modelData.recipeList){ recipe in
-                NavigationLink {
-                    RecipeDetails(recipe: recipe)
-                } label: {
-                    RecipeRow(recipe: recipe)
+            ScrollView{
+                if modelData.featuredRecipe != nil {
+                    
+                    NavigationLink {
+                        RecipeDetails(recipe: modelData.featuredRecipe!)
+                    } label: {
+                        FeatureRecipe(recipe: modelData.featuredRecipe!)
+                    }
                 }
-                .redacted(reason: isLoading ? .placeholder : .init())
+                
+                if modelData.favouriteRecipes.count > 0 {
+                    RecipeTagListView(tagName: "Favourites", recipes: modelData.favouriteRecipes)
+                }
+                
+                
+                ForEach(modelData.recipeTags.keys.sorted(), id: \.self) { key in
+                    RecipeTagListView(tagName: key.capitalized, recipes: modelData.recipeTags[key]!)
+                }
+                .listRowInsets(EdgeInsets())
+                
+                List(modelData.recipeList){ recipe in
+                    NavigationLink {
+                        RecipeDetails(recipe: recipe)
+                    } label: {
+                        RecipeRow(recipe: recipe)
+                    }
+                    .redacted(reason: isLoading ? .placeholder : .init())
+                }
+                
             }
+            
             .navigationTitle("Recipes")
+            .listStyle(.inset)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        print("Help tapped!")
+                    } label: {
+                        HStack{
+                            Text("Add")
+                            Image(systemName: "doc.badge.plus")
+                                .tint(.blue)
+                        }
+                    }
+                }
+            }
         }
-       
+        
         .onAppear{
             modelData.loadAllRecipes(completionHandler: { result in
                 switch result {
                 case .success(_):
-                    debugPrint("Recipes successfully retrieved")
-
-                    isLoading = false
+                    
+                    
+                    print("Successfully loaded recipes")
                 case .failure(let r):
                     print(r.localizedDescription)
-                    isLoading = false
                 }
             })
         }

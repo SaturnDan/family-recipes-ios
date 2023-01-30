@@ -18,6 +18,8 @@ struct ContentView: View {
     }
     
     var body: some View {
+        
+        /*
         TabView(selection: $selection) {
             FavouritesView()
                 .tabItem {
@@ -29,7 +31,9 @@ struct ContentView: View {
                     Label ("Recipes", systemImage: "list.number")
                 }
                 .tag(Tab.list)
-        }
+        }*/
+        
+        ListView()
         .onChange(of: scenePhase) { phase in
             if phase == .background {
                 modelData.saveData()

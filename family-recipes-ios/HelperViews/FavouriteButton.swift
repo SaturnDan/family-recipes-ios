@@ -12,8 +12,8 @@ struct FavouriteButton: View {
     
     var body: some View {
         HStack{
-            Toggle("Save emote as favourite?", isOn: $isSet)
-                .font(.headline)
+            Toggle("Save recipe as a favourite?", isOn: $isSet)
+                .font(.subheadline)
         }
     }
 }
