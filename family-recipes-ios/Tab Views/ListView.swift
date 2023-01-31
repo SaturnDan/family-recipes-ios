@@ -10,6 +10,7 @@ import SwiftUI
 struct ListView: View {
     @EnvironmentObject var modelData: ModelData
     @State private var isLoading = true
+    @State private var showingForm = false
     
     
     var body: some View {
@@ -51,7 +52,7 @@ struct ListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        print("Help tapped!")
+                        showingForm.toggle()
                     } label: {
                         HStack{
                             Text("Add")
@@ -59,6 +60,9 @@ struct ListView: View {
                                 .tint(.blue)
                         }
                     }
+                    .sheet(isPresented: $showingForm) {
+                                RecipeForm()
+                            }
                 }
             }
         }

@@ -64,23 +64,23 @@ struct Tags: Codable, Hashable {
 }
 
 struct IngredientSections: Codable, Hashable {
-    let sectionName: String
-    let sectionIngredients: [IngredientsinSection]
+    var sectionName: String
+    var sectionIngredients: [IngredientsinSection]
 }
 
 struct IngredientsinSection: Codable, Hashable {
-    let amount: String
-    let unit: String
-    let ingredient: String
+    var amount: String
+    var unit: String
+    var ingredient: String
 }
 
 struct Sections: Codable, Hashable {
-    let sectionName: String
-    let sectionSteps: [Step]
+    var sectionName: String
+    var sectionSteps: [Step]
 }
 
 struct Step: Codable, Hashable {
-    let stepInstruction: String
+    var stepInstruction: String
 }
 
 struct RecipeData: Codable, Hashable {
