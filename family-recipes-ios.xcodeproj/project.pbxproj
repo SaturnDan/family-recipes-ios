@@ -37,6 +37,7 @@
 		79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8FAFA2972E16500CACFAF /* ContentView.swift */; };
 		79B8FAFD2972E16600CACFAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B8FAFC2972E16600CACFAF /* Assets.xcassets */; };
 		79B8FB002972E16600CACFAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B8FAFF2972E16600CACFAF /* Preview Assets.xcassets */; };
+		79EE200E2989CFBC00E79C9D /* FormSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EE200D2989CFBC00E79C9D /* FormSteps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		79B8FAFA2972E16500CACFAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79B8FAFC2972E16600CACFAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79B8FAFF2972E16600CACFAF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		79EE200D2989CFBC00E79C9D /* FormSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSteps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				798404B62977E3C80065F493 /* DifficultyScale.swift */,
 				798404AB2975F0E00065F493 /* Tag.swift */,
 				79ABCD4129796AB0000452E9 /* IngredientList.swift */,
+				79EE200D2989CFBC00E79C9D /* FormSteps.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				79B8FAFB2972E16500CACFAF /* ContentView.swift in Sources */,
 				798404B52977E2E90065F493 /* RecipeDataView.swift in Sources */,
 				795777532972F0CD00465210 /* ModelData.swift in Sources */,
+				79EE200E2989CFBC00E79C9D /* FormSteps.swift in Sources */,
 				7950BEFB29878A340049A67A /* RecipeForm.swift in Sources */,
 				7984049229748C220065F493 /* RecipeRow.swift in Sources */,
 				7957775529736A5800465210 /* Recipe.swift in Sources */,

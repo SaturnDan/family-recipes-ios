@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct RecipeForm: View {
+    @State var name: String = ""
     @State var title: String = ""
     @State var shortDescription: String = ""
     @State var description: String = ""
     @State var furtherInfo: String = ""
     @State var cookTime: String = ""
     @State var prepTime: String = ""
-    @State private var difficultyIndex = 0
-    @State var tags = [String]()
+    @State var imageURL: String = ""
+    @State private var difficultyIndex: Int = 0
+    @State var tags = [Tags]()
     @State var simpleStepSections = [Sections]()
     @State var detailedStepSections = [Sections]()
     @State var recipeIngredients = [IngredientSections]()
@@ -36,6 +38,7 @@ struct RecipeForm: View {
                     }
                     TextField("Cook time (e.g. 1 hour)", text: $cookTime)
                     TextField("Prep time (e.g. 10 minutes)", text: $prepTime)
+                    TextField("Image URL", text: $imageURL)
                 } header: {
                     Text("Basic Information")
                 }
@@ -48,92 +51,32 @@ struct RecipeForm: View {
                     Text("Description")
                 }
                 
-                
                 SwiftUI.Section{
-                    Button{
-                        simpleStepSections.append(Sections(sectionName: "", sectionSteps: [Step]()))
-                    } label: {
-                        Text("Add new section")
-                    }
-                }header: {
-                    Text("Simple Method Steps")
-                }
-                
-                ForEach(simpleStepSections.indices, id: \.self) { index in
-                    SwiftUI.Section{
-                        TextField("Section Title", text: $simpleStepSections[index].sectionName)
+                    ForEach(tags.indices, id:\.self) { index in
+                        TextField("Tag", text: $tags[index].tagName)
                             .swipeActions{
                                 Button(role: .destructive) {
-                                    simpleStepSections.remove(at: index)
+                                    tags.remove(at: index)
                                 }label: {
                                     Image(systemName: "minus.circle")
                                         .foregroundColor(.red)
                                 }
                             }
                         
-                        ForEach(simpleStepSections[index].sectionSteps.indices, id: \.self) { secondIndex in
-                            TextField("Step Instruction", text: $simpleStepSections[index].sectionSteps[secondIndex].stepInstruction, axis:.vertical)
-                                .swipeActions{
-                                    Button(role: .destructive) {
-                                        simpleStepSections[index].sectionSteps.remove(at: secondIndex)
-                                    }label: {
-                                        Image(systemName: "minus.circle")
-                                            .foregroundColor(.red)
-                                    }
-                                }
-                        }
-                        Button{
-                            simpleStepSections[index].sectionSteps.append(Step(stepInstruction: ""))
-                        } label: {
-                            Text("Add another step")
-                        }
-                    }header: {
-                        Text("Simple Method Section #\(index + 1)")
                     }
-                }
-                
-                SwiftUI.Section{
-                    Button{
-                        detailedStepSections.append(Sections(sectionName: "", sectionSteps: [Step]()))
-                    } label: {
-                        Text("Add new section")
+                    Button {
+                        tags.append(Tags(tagName: ""))
+                    }label: {
+                        Text("Add another tag")
                     }
+                    
                 }header: {
-                    Text("Detailed Method Steps")
+                    Text("Recipe Tags")
                 }
                 
-                ForEach(detailedStepSections.indices, id: \.self) { index in
-                    SwiftUI.Section{
-                        TextField("Section Title", text: $detailedStepSections[index].sectionName)
-                            .swipeActions{
-                                Button(role: .destructive) {
-                                    detailedStepSections.remove(at: index)
-                                }label: {
-                                    Image(systemName: "minus.circle")
-                                        .foregroundColor(.red)
-                                }
-                            }
-                        
-                        ForEach(detailedStepSections[index].sectionSteps.indices, id: \.self) { secondIndex in
-                            TextField("Step Instruction", text: $detailedStepSections[index].sectionSteps[secondIndex].stepInstruction, axis:.vertical)
-                                .swipeActions{
-                                    Button(role: .destructive) {
-                                        detailedStepSections[index].sectionSteps.remove(at: secondIndex)
-                                    }label: {
-                                        Image(systemName: "minus.circle")
-                                            .foregroundColor(.red)
-                                    }
-                                }
-                        }
-                        Button{
-                            detailedStepSections[index].sectionSteps.append(Step(stepInstruction: ""))
-                        } label: {
-                            Text("Add another step")
-                        }
-                    }header: {
-                        Text("Detailed Method Section #\(index + 1)")
-                    }
-                }
+                FormSteps(simpleStepSections: simpleStepSections)
+                
+                FormSteps(simpleStepSections: detailedStepSections)
                 
                 SwiftUI.Section{
                     Button{
@@ -160,59 +103,44 @@ struct RecipeForm: View {
                         
                         ForEach(recipeIngredients[index].sectionIngredients.indices, id: \.self){ secondIndex in
                             HStack{
-                            TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].amount, axis:.vertical)
-                            TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].instruction, axis:.vertical)
-                            TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].unit, axis:.vertical)
+                                TextField("Amount", text: $recipeIngredients[index].sectionIngredients[secondIndex].amount, axis:.vertical)
+                                TextField("Units", text: $recipeIngredients[index].sectionIngredients[secondIndex].unit, axis:.vertical)
+                                TextField("Ingredient", text: $recipeIngredients[index].sectionIngredients[secondIndex].ingredient, axis:.vertical)
                             }
+                            
+                                .swipeActions{
+                                    Button(role: .destructive) {
+                                        recipeIngredients[index].sectionIngredients.remove(at: secondIndex)
+                                    }label: {
+                                        Image(systemName: "minus.circle")
+                                            .foregroundColor(.red)
+                                    }
+                                }
+                            Button {
+                                recipeIngredients[index].sectionIngredients.append(IngredientsinSection(amount: "", unit: "", ingredient: ""))
+                            }label: {
+                                Text("Add another ingredient")
+                            }
+                            
                         }
                         
                     } header: {
                         Text("Ingredient Section #\(index + 1)")
                     }
                 }
-                /*
-                 ForEach(recipeIngredients.indices, id: \.self) { index in
-                 
-                 SwiftUI.Section{
-                 TextField("Section Title", text: $recipeIngredients[index].sectionName)
-                 .swipeActions{
-                 Button(role: .destructive) {
-                 recipeIngredients.remove(at: index)
-                 }label: {
-                 Image(systemName: "minus.circle")
-                 .foregroundColor(.red)
-                 }
-                 }
-                 
-                 ForEach(recipeIngredients[index].sectionIngredients.indices, id: \.self) { secondIndex in
-                 
-                 HStack{
-                 TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].amount, axis:.vertical)
-                 TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].instruction, axis:.vertical)
-                 TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].unit, axis:.vertical)
-                 }
-                 .swipeActions{
-                 Button(role: .destructive) {
-                 $recipeIngredients[index].sectionIngredients.remove(at: secondIndex)
-                 }label: {
-                 Image(systemName: "minus.circle")
-                 .foregroundColor(.red)
-                 }
-                 }
-                 }
-                 
-                 Button{
-                 recipeIngredients[index].sectionIngredients.append(IngredientsinSection(amount: "", instruction: "", unit: ""))
-                 } label: {
-                 Text("Add another step")
-                 }
-                 }
-                 
-                 }
-                 */
+                
                 
                 Button{
+                    
+                    name = title.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
+                    name = name.lowercased()
+                    
+                    let recipeData = RecipeData(cookTime: cookTime, difficulty: difficultyOptions[difficultyIndex], prepTime: prepTime)
+                    
+                    let newRecipe = Recipe(description: description, shortDescription: shortDescription, stepsDetailed: detailedStepSections, tags: tags, stepsSimple: simpleStepSections, furtherInfo: furtherInfo, title: title, ingredients: recipeIngredients, imageURL: imageURL, recipeData: recipeData, recipeName: name)
+                    
                     dismiss()
+                    
                 }label:{
                     Text("Submit")
                         .frame(maxWidth: .infinity)
@@ -237,9 +165,6 @@ struct RecipeForm: View {
                         Text("Reset form")
                     }
                 }
-                
-                
-                
             }
             
             .navigationBarTitle("Add a recipe")
@@ -257,7 +182,20 @@ struct RecipeForm: View {
             }
             
         }
-        
+        .onAppear{
+            if tags.count == 0 {
+                tags.append(Tags(tagName: ""))
+            }
+            if detailedStepSections.count == 0 {
+                detailedStepSections.append((Sections(sectionName: "", sectionSteps: [Step]())))
+            }
+            if simpleStepSections.count == 0 {
+                simpleStepSections.append((Sections(sectionName: "", sectionSteps: [Step]())))
+            }
+            if recipeIngredients.count == 0 {
+                recipeIngredients.append(IngredientSections(sectionName: "", sectionIngredients: [IngredientsinSection(amount: "", unit: "", ingredient: "")]))
+            }
+        }
     }
 }
 

@@ -52,15 +52,7 @@ struct Recipe: Codable, Identifiable, Hashable {
 }
 
 struct Tags: Codable, Hashable {
-    let tagName: String
-    var tagColour: Color {
-        switch tagName {
-        case "favourites": return Color(UIColor("#f7dc6f"))
-        case "italian": return Color(UIColor("#58d68d"))
-        case "pizza": return Color(UIColor("#ff7b7b"))
-        default: return Color(UIColor.systemGray5)
-        }
-    }
+    var tagName: String
 }
 
 struct IngredientSections: Codable, Hashable {
