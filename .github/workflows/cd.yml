@@ -2,8 +2,6 @@ name: CD
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions a tab
   workflow_dispatch:
