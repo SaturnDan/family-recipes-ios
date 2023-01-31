@@ -30,7 +30,7 @@ struct RecipeForm: View {
                 SwiftUI.Section{
                     TextField("Recipe Title", text: $title)
                     Picker(selection: $difficultyIndex, label: Text("Recipe Difficulty")) {
-                        ForEach(0 ..< difficultyOptions.count) {
+                        ForEach(0 ..< difficultyOptions.count, id: \.self) {
                             Text(self.difficultyOptions[$0].capitalized)
                         }
                     }
@@ -143,6 +143,32 @@ struct RecipeForm: View {
                     }
                 }header: {
                     Text("Ingredients")
+                }
+                
+                ForEach(recipeIngredients.indices, id: \.self) { index in
+                    SwiftUI.Section{
+                        TextField("Section Title", text: $recipeIngredients[index].sectionName)
+                            .swipeActions{
+                                Button(role: .destructive) {
+                                    recipeIngredients.remove(at: index)
+                                }label: {
+                                    Image(systemName: "minus.circle")
+                                        .foregroundColor(.red)
+                                }
+                            }
+                        
+                        
+                        ForEach(recipeIngredients[index].sectionIngredients.indices, id: \.self){ secondIndex in
+                            HStack{
+                            TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].amount, axis:.vertical)
+                            TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].instruction, axis:.vertical)
+                            TextField("Step Instruction", text: $recipeIngredients[index].sectionIngredients[secondIndex].unit, axis:.vertical)
+                            }
+                        }
+                        
+                    } header: {
+                        Text("Ingredient Section #\(index + 1)")
+                    }
                 }
                 /*
                  ForEach(recipeIngredients.indices, id: \.self) { index in
